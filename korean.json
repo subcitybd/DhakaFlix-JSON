@@ -1,1 +1,10 @@
-[]
+package com.subcitybd.dhakaflix;
+
+public class KoreanScanner {
+
+    public static void scan() throws Exception {
+
+        MovieScanner.scan("korean.txt", "korean.json");
+
+    }
+}
