@@ -1,0 +1,19 @@
+{
+  "name": "DhakaFlix",
+  "author": "subcitybd",
+  "version": 1,
+  "catalogs": [
+    {
+      "name": "Movies",
+      "url": "movies.json"
+    },
+    {
+      "name": "TV Shows",
+      "url": "tv.json"
+    },
+    {
+      "name": "Korean TV",
+      "url": "korean.json"
+    }
+  ]
+}
