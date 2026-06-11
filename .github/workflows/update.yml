@@ -1,0 +1,33 @@
+name: DhakaFlix Auto Generator
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run generator
+        run: python generator.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "dhakaflix-bot"
+          git config --global user.email "bot@github.com"
+          git add .
+          git commit -m "auto update" || echo "no changes"
+          git push
